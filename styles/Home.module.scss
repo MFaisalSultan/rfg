@@ -5,9 +5,31 @@
 .appBar {
   height: 75px;
   background-color: var(--color-light);
-  .info{
-    .name{
-    @include text16;
+
+  .leftBox{
+    display: flex;
+    justify-content: space-between;
+    .info{
+      margin: 1.5rem 0;
+      .address{
+      @include text16;
+    }
+    .city{
+      @include text16;
+      font-weight: 400;
+      }
+    }
+  }
+  .rightBox{
+    display: flex;
+    justify-content: end;
+
+    button{
+      margin: 1.5rem 0;
+      @include greenButton;
+      &:last-child{
+        margin-left: 40px;
+      }
     }
   }
 }

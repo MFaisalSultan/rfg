@@ -1,8 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'mixinsValues';
+
 html, 
 body {
   padding: 0;
   margin: 0;
-  font-family: poppins400;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 62.5%;
 }
 
 a {
@@ -10,9 +15,16 @@ a {
   text-decoration: none;
 }
 
+p{
+  margin: 0px;
+}
 * {
   box-sizing: border-box;
 }
+$theme-colors: (
+  "primary": #25611D,
+  "danger": #ff4136
+);
 
 :root {
   --color-success: #25611D;
@@ -20,6 +32,8 @@ a {
   --color-white: #ffffff;
   --color-light: #F7F7F7;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -52,3 +66,84 @@ a {
   src: url('../public/fonts/Poppins-Bold.ttf');
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                                   NAVBAR                                   */
+/* -------------------------------------------------------------------------- */
+
+.navbar{
+  height: 40px;
+  padding: 0px;
+  margin-top: 2.4rem;
+  .navbar-brand{
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-success);
+
+  }
+  .navbar-nav{
+    margin-left: auto;
+    a{
+      @include text16;
+      padding: .6rem 2rem;
+      min-width: 10rem;
+      text-align: center;
+      margin: 0px 1.4rem;
+      &.active{
+        background-color: var(--color-success);
+        border-radius: 7px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+
+.carousel {
+  .carousel-indicators {
+    button{
+      margin-bottom: 3.9rem;
+      width:1.5rem;
+      height:1.5rem;
+      border-radius: 50px;
+      border: 2px solid #fff;
+      background-color: #fff ;
+      opacity: 1;
+      &.active{
+        background-color: #25611D;
+        
+      }
+    }
+  }
+      .carousel-control-next span,.carousel-control-prev span{
+        background-color: #0002;
+        border-radius: 50px;
+        padding: 10px !important;
+        width: 6.2rem;
+        height: 6.2rem;
+        background-size: 3.1rem;
+        &:hover{
+          background-color: #25611D46 
+        }
+      }
+      .carousel-caption{
+        width: 50%;
+        text-align: left;
+        top: 30%;
+        h2{
+          font-size: 5.6rem;
+            font-weight: 700;
+            letter-spacing: 1.68px;
+        }
+        p{
+          font-size: 1.8rem;
+          width: 65%;
+          font-weight: 200;
+          margin: 1.4rem 0;
+        }
+        button{
+          @include greenButton;
+        }
+      }
+}
