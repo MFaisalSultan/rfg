@@ -1,6 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'mixinsValues';
+@import './variables';
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+:root {
+  --color-success: #25611D;
+  --color-dark: #000000;
+  --color-white: #ffffff;
+  --color-light: #F7F7F7;
+}
+
 
 html, 
 body {
@@ -20,50 +30,6 @@ p{
 }
 * {
   box-sizing: border-box;
-}
-$theme-colors: (
-  "primary": #25611D,
-  "danger": #ff4136
-);
-
-:root {
-  --color-success: #25611D;
-  --color-dark: #000000;
-  --color-white: #ffffff;
-  --color-light: #F7F7F7;
-}
-
-
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
-@font-face {
-  font-family: poppins300;
-  src: url('../public/fonts/Poppins-Light.ttf');
-}
-@font-face {
-  font-family: poppins400;
-  src: url('../public/fonts/Poppins-Regular.ttf');
-}
-@font-face {
-  font-family: poppins500;
-  src: url('../public/fonts/Poppins-Medium.ttf');
-}
-@font-face {
-  font-family: poppins600;
-  src: url('../public/fonts/Poppins-SemiBold.ttf');
-}
-@font-face {
-  font-family: poppins700;
-  src: url('../public/fonts/Poppins-Bold.ttf');
 }
 
 
@@ -144,6 +110,8 @@ $theme-colors: (
         }
         button{
           @include greenButton;
+          font-size: 2rem;
+          width: 20.4rem;
         }
       }
 }

@@ -20,7 +20,7 @@ function CarouselSlider() {
           <Carousel.Caption>
             <h2 className={styles.slider_heading}>RFG Logistic Solution From Pickup to Designation</h2>
             <p>RFG Logistics provides best of the kind services that will make our customer’s experience pleasantly easy and unforgettable. </p>
-            <Button variant="primary">Learn More</Button>
+            <Button variant="primary" size="lg">Learn More</Button>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>

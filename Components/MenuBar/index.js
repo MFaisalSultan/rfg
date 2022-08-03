@@ -26,7 +26,7 @@ const AppBar = () => {
           </Col>
           <Col  lg={6} > 
           <div className={styles.rightBox}>
-              <Button>Request A Quote</Button>
+              <Button variant="primary" >Request A Quote</Button>
               <Button>Request A Quote</Button>
           </div>
           </Col>
