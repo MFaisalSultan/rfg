@@ -8,7 +8,7 @@ const AppBar = () => {
     <div className={styles.appBar}>
       <Container>
         <Row>
-          <Col md={8} lg={7} xl={6}>
+          <Col md={7} lg={7} xl={6}>
             <div className={styles.leftBox}>
               <div className={styles.info}>
                 <p className={styles.address}>Address</p>
@@ -24,7 +24,7 @@ const AppBar = () => {
               </div>
             </div>
           </Col>
-          <Col md={4} lg={5} xl={6}>
+          <Col md={5} lg={5} xl={6}>
             <div className={styles.rightBox}>
               <AppDropDown />
               <Button>Request A Quote</Button>

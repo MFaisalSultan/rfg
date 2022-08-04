@@ -2,14 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'mixinsValues';
 @import './variables';
-@import "../node_modules/bootstrap/scss/bootstrap";
-
-:root {
-  --color-success: #25611D;
-  --color-dark: #000000;
-  --color-white: #ffffff;
-  --color-light: #F7F7F7;
-}
+$theme-colors: (
+  "primary": #25611D,
+  );
+  @import "../node_modules/bootstrap/scss/bootstrap";
 
 
 html, 
@@ -59,9 +55,26 @@ html {
   .navbar-brand{
     font-size: 3rem;
     font-weight: 800;
-    color: var(--color-success);
+    color: $color-success;
 
   }
+  .navbar-toggler{
+    border: 2px solid $color-success;
+    background-color: $color-success;
+    box-shadow: none;
+  }
+  .navbar-collapse{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    @media screen and (max-width:991px){
+      box-shadow: rgb(97 95 95 / 66%) 0px 6px 10px;
+      background-color: rgb(255, 255, 255);
+      
+    }
+   
+}
+  // }
   .navbar-nav{
     margin-left: auto;
     a{
@@ -70,11 +83,23 @@ html {
       min-width: 10rem;
       text-align: center;
       margin: 0px 1.4rem;
+      border-radius: 7px;
       &.active{
-        background-color: var(--color-success);
-        border-radius: 7px;
+        background-color: $color-success;
         color: #fff;
       }
+    }
+  }
+}
+.navbar-toggler {
+  // border: none;
+  // margin-left: 15px;
+  .navbar-toggler-icon {
+    background-image: url("../public/menu.png");
+  }
+  &.collapsed {
+    .navbar-toggler-icon {
+      background-image: url("../public/cross.png");
     }
   }
 }
@@ -83,10 +108,11 @@ html {
 
 .carousel {
   .carousel-indicators {
+    margin-bottom: 0px;
     button{
-      margin-bottom: 3.9rem;
-      width:1.5rem;
-      height:1.5rem;
+      margin-bottom: 3.5rem;
+      width:1.3rem;
+      height:1.3rem;
       border-radius: 50px;
       border: 2px solid #fff;
       background-color: #fff ;
@@ -97,36 +123,70 @@ html {
       }
     }
   }
-      .carousel-control-next span,.carousel-control-prev span{
-        background-color: #0002;
-        border-radius: 50px;
-        padding: 10px !important;
-        width: 6.2rem;
-        height: 6.2rem;
-        background-size: 3.1rem;
-        &:hover{
-          background-color: #25611D46 
+      .carousel-control-next span{
+        @include sliderArrowbutton;
+        @media screen and (max-width:528px){
+          background-position-x: 1.2rem;
         }
+      }
+      .carousel-control-prev span{
+      @include sliderArrowbutton;
+      @media screen and (max-width:528px){
+        background-position-x: 0.9rem;
+      }
       }
       .carousel-caption{
         width: 50%;
+        height: 100%;
+        width: calc(100% - 15%);
+        margin-left: 15%;
         text-align: left;
-        top: 30%;
+        position: unset;
+        padding: 0px;
         @media screen and (max-width: 1024px) {
           width: unset;
         }
-        @media screen and (max-width:428px) {
+        @media screen and (max-width:528px) {
           top: unset;
+          width: unset;
         }
+        .content{
+          position: absolute;
+          top: 40%;
+           width: 50%; 
+          @media screen and (max-width:1440px){
+              top: 36%;
+          }
+          @media screen and (max-width:991px) {
+            width: calc(100% - 30%);
+          }
+          @media screen and (max-width:528px) {
+            top: 20%;
+          }
+        }
+
+        
+      
         h2{
           font-size: 5.6rem;
             font-weight: 700;
             letter-spacing: 1.68px;
+
+            @media screen and (max-width:1366px) {
+              font-size: 4.5rem;
+            }
+            @media screen and (max-width:1200px) {
+              font-size: 4rem
+            }
+            @media screen and (max-width:991px) {
+              text-align: center
+            }
             @media screen and (max-width:768px) {
               font-size: 3rem;
             }
-            @media screen and (max-width: 428px) {
-              font-size: 15px;
+            @media screen and (max-width: 528px) {
+              font-size: 12px;
+              
             }
         }
         p{
@@ -134,8 +194,14 @@ html {
           width: 65%;
           font-weight: 200;
           margin: 1.4rem 0;
-          @media screen and (max-width: 428px) {
+          @media screen and (max-width:991px) {
+            text-align: center;
+            width: auto;
+          }
+          @media screen and (max-width: 528px) {
             font-size: 10px;
+            text-align: center;
+            width: 100%;
           }
         }
         button{
@@ -143,13 +209,16 @@ html {
           font-size: 2rem;
           width: 204px;
           @media screen and (max-width:768px) {
-            height: 40px;
+            // height: 40px;
             width: 150px;
             font-size: 12px;
           }
-          @media screen and (max-width: 428px) {
+          @media screen and (max-width:991px) {
+            margin: auto;
+          }
+          @media screen and (max-width: 528px) {
             font-size: 10px;
-            height: 34px;
+            // height: 34px;
             width: max-content;
           }
         }

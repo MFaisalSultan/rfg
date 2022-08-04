@@ -1,16 +1,19 @@
 @import "mixinsValues";
+@import "variables";
 
 // @use ''
 
 .appBar {
   min-height: 75px;
-  background-color: var(--color-light);
+  background-color: $color-light;
   display: flex;
   align-items: center;
 
   .leftBox {
     display: flex;
     justify-content: space-between;
+    height: 100%;
+    align-items: center;
     .info {
       @media screen and (max-width: 428px) {
         margin: 10px 0;
@@ -20,7 +23,7 @@
       }
       .city {
         @include text16;
-        font-weight: 400;
+        font-weight: 200;
       }
     }
   }
@@ -33,16 +36,22 @@
      justify-content: center;
     }
     button {
-      @include text16;
       @include greenButton;
+      font-size: 1.4rem;
+      font-weight: 500;
+      width: auto;
+      height: 4rem;
+
+      @media screen and (min-width:768px) and (max-width: 1024px) {
+          font-size: 1.2rem;
+      }
       @media screen and (max-width: 428px) {
         margin: 10px 0;
       
       }
-      font-size: 1.4rem;
-      width: auto;
-      height: 41px;
+    
       &:first-child {
+        border: 1px solid $color-success;
         background-color: var(--color-white);
         color: var(--color-success);
       }
