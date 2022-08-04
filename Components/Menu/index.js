@@ -10,7 +10,6 @@ const AppMenu = () => {
         <Navbar.Brand href="#home">RFG LOGO</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-       
           <Nav>
             <Nav.Link href="#home">HOME</Nav.Link>
             <Nav.Link href="#aboutus">ABOUT US</Nav.Link>

@@ -1,37 +1,53 @@
-@import 'mixinsValues'  ;
+@import "mixinsValues";
 
 // @use ''
 
 .appBar {
-  height: 75px;
+  min-height: 75px;
   background-color: var(--color-light);
+  display: flex;
+  align-items: center;
 
-  .leftBox{
+  .leftBox {
     display: flex;
     justify-content: space-between;
-    .info{
-      margin: 1.5rem 0;
-      .address{
-      @include text16;
-    }
-    .city{
-      @include text16;
-      font-weight: 400;
+    .info {
+      @media screen and (max-width: 428px) {
+        margin: 10px 0;
+      }
+      .address {
+        @include text16;
+      }
+      .city {
+        @include text16;
+        font-weight: 400;
       }
     }
   }
-  .rightBox{
+  .rightBox {
     display: flex;
     justify-content: end;
-
-    button{
+    align-items: center;
+    height: 100%;
+    @media screen and (max-width: 428px) {
+     justify-content: center;
+    }
+    button {
       @include text16;
       @include greenButton;
-      margin: 1.5rem 0;
+      @media screen and (max-width: 428px) {
+        margin: 10px 0;
+      
+      }
       font-size: 1.4rem;
       width: auto;
-      &:last-child{
-        margin-left: 40px;
+      height: 41px;
+      &:first-child {
+        background-color: var(--color-white);
+        color: var(--color-success);
+      }
+      &:last-child {
+        margin-left: 25px;
       }
     }
   }

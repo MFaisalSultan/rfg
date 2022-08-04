@@ -32,15 +32,30 @@ p{
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 51%;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  html {
+    font-size: 40%;
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   NAVBAR                                   */
 /* -------------------------------------------------------------------------- */
 
 .navbar{
-  height: 40px;
+  // height: 40px;
   padding: 0px;
-  margin-top: 2.4rem;
+  // margin-top: 2.4rem;
   .navbar-brand{
     font-size: 3rem;
     font-weight: 800;
@@ -97,21 +112,46 @@ p{
         width: 50%;
         text-align: left;
         top: 30%;
+        @media screen and (max-width: 1024px) {
+          width: unset;
+        }
+        @media screen and (max-width:428px) {
+          top: unset;
+        }
         h2{
           font-size: 5.6rem;
             font-weight: 700;
             letter-spacing: 1.68px;
+            @media screen and (max-width:768px) {
+              font-size: 3rem;
+            }
+            @media screen and (max-width: 428px) {
+              font-size: 15px;
+            }
         }
         p{
           font-size: 1.8rem;
           width: 65%;
           font-weight: 200;
           margin: 1.4rem 0;
+          @media screen and (max-width: 428px) {
+            font-size: 10px;
+          }
         }
         button{
           @include greenButton;
           font-size: 2rem;
-          width: 20.4rem;
+          width: 204px;
+          @media screen and (max-width:768px) {
+            height: 40px;
+            width: 150px;
+            font-size: 12px;
+          }
+          @media screen and (max-width: 428px) {
+            font-size: 10px;
+            height: 34px;
+            width: max-content;
+          }
         }
       }
 }
