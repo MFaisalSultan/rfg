@@ -7,7 +7,6 @@ import $ from 'jquery';
 
 const AppMenu = () => {
   useEffect(() => {
-    console.log($(".navbar-nav").children().first().addClass('active'));
     return () => {
       $(".navbar-nav .nav-link").on("click", function(){
         $(".navbar-nav").find(".active").removeClass("active");
